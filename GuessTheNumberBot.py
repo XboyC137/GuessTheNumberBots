@@ -1,4 +1,5 @@
 import random
+import math
 
 def int_input(text):
     while True:
@@ -52,7 +53,7 @@ def human_plays_a_turn():
 def bot_plays_a_turn():
     global number, turn_count, victory, maximum, minimum
     while not victory:
-        guess = round((minimum+maximum)/2, 0)
+        guess = math.ceil((minimum+maximum)/2)
         print('ROBOT : "Is the mystery number {}?"'.format(guess))
         win_check(guess)
 
@@ -73,11 +74,11 @@ def win_check(guess):
     if number < guess:
         print("Too high.")
         turn_count += 1
-        maximum = guess
+        maximum = guess-1
     elif guess < number:
         print("Too low.")
         turn_count += 1
-        minimum = guess
+        minimum = guess+1
     elif guess == number and turn_count == 0:
         turn_count += 1
         print("Won in {} turn!!!".format(turn_count))
@@ -147,4 +148,5 @@ def human_vs_superbot():
 # bot_vs_bot()          # Bot plays against itself
 # human_vs_human()      # Two players play against each other
 # human_vs_superbot()   # SUPERBOT is the World Champion in number guessing!
+
 
