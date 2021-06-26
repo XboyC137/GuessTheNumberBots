@@ -149,4 +149,6 @@ def human_vs_superbot():
 # human_vs_human()      # Two players play against each other
 # human_vs_superbot()   # SUPERBOT is the World Champion in number guessing!
 
+bot_vs_human()
+
 
