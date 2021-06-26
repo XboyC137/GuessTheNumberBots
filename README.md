@@ -1,4 +1,4 @@
-# GuessTheNumberBots
+# GuessTheNumberBot
 Play guess the number in console with bots!
 
 # Game modes
